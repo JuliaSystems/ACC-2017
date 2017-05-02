@@ -1,0 +1,14 @@
+# Created by https://www.gitignore.io/api/julia
+
+### Julia ###
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+deps/deps.jl
+
+# End of https://www.gitignore.io/api/julia
+
+# Created by https://www.gitignore.io/api/python
+
+# Jupyter Notebook
+.ipynb_checkpoints
