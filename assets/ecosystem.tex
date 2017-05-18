@@ -1,0 +1,28 @@
+\documentclass[convert={outfile=\jobname.svg}]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}
+  \node [shape = ellipse, minimum width = \linewidth,
+        minimum height = 0.5\linewidth, align = center, draw, dashed]
+        (be) {};
+
+  \node [draw, align = center, rectangle] (sb)
+    {\textbf{JuliaSystems}\\SystemsBase\\\small\emph{basic funtionality}};
+
+  \foreach \angle/\org/\pkg/\dsc [count = \id] in {
+    30/JuliaSystems/MPCToolbox/{\emph{WIP}},
+    150/JuliaSystems/ControlToolbox/{\emph{presented; WIP}},
+    90/JuliaSystems/IdentificationToolbox/{\emph{presented; WIP}},
+    210/{Org X}/RobustControl/{\emph{help needed}},
+    270/{Org Y}/\dots/{\emph{Any suggestions?}},
+    330/{Org Z}/NetworkedControl/{\emph{help needed}}
+  } {
+    \node [draw, shift = (be.\angle), align = center, rectangle, fill = white]
+          (tb\id) {\textbf{\org}\\\pkg\\\small\dsc};
+    \draw [Latex-Latex, shorten >= 0.3cm, shorten <= 0.3cm] (tb\id) to (sb);
+  }
+\end{tikzpicture}
+\end{document}
