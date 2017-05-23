@@ -21,7 +21,8 @@ if !in("QMDP", packages)
     POMDPs.add("QMDP")
 end
 if !in("POMCPOW", packages)
-    POMDPs.add("POMCPOW")
+    Pkg.clone("https://github.com/JuliaPOMDP/POMCPOW.jl.git")
+    Pkg.build("POMCPOW")
 end
 if !in("LaserTag", packages)
     Pkg.clone("https://github.com/zsunberg/LaserTag.jl.git")
