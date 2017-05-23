@@ -1,5 +1,7 @@
 # will install the requirements for the notebooks
 
+Pkg.update()
+
 function add_if_missing(pkg, installed)
     if !in(pkg, installed)
         Pkg.add(pkg)
